@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Encriptador</title>
+   <link rel="stylesheet" href="css/styles.css">
+   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+   <!-- Encabezado de la página -->
+   <header class='encabezado'>
+      <!-- Sección del logo -->
+      <div class='logo'>
+         <!-- Logo -->
+         <img src="imgs/Logo.png" alt="Logo">
+      </div>
+   </header>
+
+
+   <!-- Sección de agregar texto -->
+   <section class='encriptador'>
+      <textarea name='texto' id='texto' cols='30' rows='10' placeholder='Ingrese el texto aquí'>Ingrese el texto aquí</textarea>
+      <!-- Panel de botones -->
+      <div class='panel-botones'>
+         <span class='alerta'>
+            <i class='bx bxs-error-circle'></i>
+            <p>Solo letras minúsculas y sin acentos</p>
+         </span>
+         <span class='botones'>
+            <button class='btn-encriptar'>Encriptar</button>
+            <button class='btn-desencriptar'>Desencriptar</button>
+         </span>
+      </div>
+      <!-- Footer -->
+      <footer class='footer'>
+         <p>Creado por <a href="https://github.com/isaipiedra" target="_blank" rel="noopener noreferrer">@Isaí Piedra Torres</a> | 2023 |
+            Para: desafío encriptador ONE G5</p>
+      </footer>
+   </section>
+
+   <!-- Sección para visualizar el resultado -->
+   <aside class='resultado'>
+      <img src="imgs/Muñeco.png" alt="búsqueda">
+      <h3>Ningún mensaje fue encontrado</h3>
+      <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+   </aside>
+
+</body>
+<script src="scripts/script.js"></script>
+</html>
