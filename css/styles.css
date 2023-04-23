@@ -18,14 +18,14 @@ body{
 .encriptador{
    color: #343A40;
    margin-left: 120px;
-   padding: 20px;
+   margin-top: 100px;
+   padding-right: 20px;
    width: calc(100% - (300px + 120px + 80px + 60px));
-   height: 84dvh;
+   height: calc(100vh - (40px + 100px));
 }
 
 .encriptador textarea{
    resize: none;
-   margin-top: 100px;
    background: inherit;
    border: none;
    font-family: 'Inter', sans-serif;
@@ -34,7 +34,7 @@ body{
    color: #0A3871;
    width: 100%;
    height: 60%;
-   overflow: scroll;
+   overflow-y: scroll;
 }
 
 .encriptador .panel-botones .alerta{
@@ -90,16 +90,14 @@ body{
 
 .resultado{
    background: #FFF;
-   height: 84dvh;
-   right: 0;
+   height: calc(100vh - (40px + 64px));
    width: 300px;
    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
    padding: 32px;
    border-radius: 32px;
    color: #343A40;
-   align-items: center;
-   align-content: center;
    text-align: center;
+   overflow-y: scroll;
 }
 
 .resultado img{
@@ -118,12 +116,44 @@ body{
    text-align: center;
 }
 
-.resultado p{
+#transcripcion p{
    font-style: normal;
    font-weight: 400;
    font-size: 16px;
    line-height: 150%;
    text-align: center;
+}
+
+#encriptado .resultadoEncriptacion{
+   background: #EFF1FA;
+   border-radius: 10px;
+
+}
+
+#encriptado .resultadoEncriptacion p{
+   word-break: break-all;
+   text-align: justify;
+   font-size: 15px;
+   display: block;
+   padding: 20px;
+}
+
+#encriptado .resultadoEncriptacion i{
+   font-size: 30px;
+   display: block;
+   padding: 5px;
+   border-end-start-radius: 10px;
+   border-end-end-radius: 10px;
+   color: #FFF;
+   background: #072B61;
+   border: .5px solid #072B61;
+}
+
+#encriptado .resultadoEncriptacion i:hover{
+   color: #343A40;
+   background: #FFF;
+   border: .5px solid #343A40;
+   transition: .3s ease-out;
 }
 
 .footer p a{
@@ -138,6 +168,11 @@ body{
    transition: .2s ease;
 }
 
-::-webkit-scrollbar {
+::-webkit-scrollbar{
+   display: none;
+}
+
+/* Ocultar la transcripción */
+.oculto{
    display: none;
 }

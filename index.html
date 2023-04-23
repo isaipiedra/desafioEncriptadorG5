@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,9 @@
       </div>
    </header>
 
+   <main>
 
+   </main>
    <!-- Sección de agregar texto -->
    <section class='encriptador'>
       <textarea name='texto' id='texto' cols='30' rows='10' placeholder='Ingrese el texto aquí'>Ingrese el texto aquí</textarea>
@@ -29,22 +31,26 @@
             <p>Solo letras minúsculas y sin acentos</p>
          </span>
          <span class='botones'>
-            <button class='btn-encriptar'>Encriptar</button>
-            <button class='btn-desencriptar'>Desencriptar</button>
+            <button class='btn-encriptar' onclick='encriptarClick()'>Encriptar</button>
+            <button class='btn-desencriptar' onclick='desencriptarClick()'>Desencriptar</button>
          </span>
       </div>
       <!-- Footer -->
       <footer class='footer'>
          <p>Creado por <a href="https://github.com/isaipiedra" target="_blank" rel="noopener noreferrer">@Isaí Piedra Torres</a> | 2023 |
-            Para: desafío encriptador ONE G5</p>
+            Para: Desafío encriptador ONE G5</p>
       </footer>
    </section>
 
    <!-- Sección para visualizar el resultado -->
    <aside class='resultado'>
-      <img src="imgs/Muñeco.png" alt="búsqueda">
-      <h3>Ningún mensaje fue encontrado</h3>
-      <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+      <div id='transcripcion'>
+         <img src="imgs/Muñeco.png" alt="búsqueda">
+         <h3>Ningún mensaje fue encontrado</h3>
+         <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+      </div>
+      <div id='encriptado'>
+      </div>
    </aside>
 
 </body>
