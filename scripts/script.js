@@ -3,6 +3,7 @@
 var cajaDeTexto = document.querySelector("#texto");
 var transcripcion = document.querySelector("#transcripcion");
 var textoEncriptado = document.querySelector("#encriptado");
+var textosResultantes = document.querySelector("#resultados");
 
 //Variables de uso
 var acentos = ['á', 'é', 'í', 'ó', 'ú', 'ä', 'ë', 'ï', 'ö', 'ü', 'à', 'è', 'ì', 'ò', 'ù'];
@@ -67,14 +68,18 @@ function desencriptar(texto) {
    do {
       nuevoTexto += texto[letra];
       for (let codigo = 0; codigo < codigos.length; codigo++){
-            if(nuevoTexto.includes(codigos[codigo])){
-               nuevoTexto = nuevoTexto.replace(codigos[codigo], vocales[codigo]);
-            } else if(nuevoTexto.includes('ames')){
-               nuevoTexto = nuevoTexto.replace('ames', 'ai');
-            }
+         if(nuevoTexto.includes(codigos[codigo])){
+            nuevoTexto = nuevoTexto.replace(codigos[codigo], vocales[codigo]);
          }
+      }
       letra++;
    } while (letra < texto.length);
+
+   for (let codigo = 0; codigo < codigos.length; codigo++){
+      if(nuevoTexto.includes('ames')){
+         nuevoTexto = nuevoTexto.replace('ames', 'ai');
+      }
+   }
 
    return nuevoTexto;
 }
@@ -88,7 +93,8 @@ function encriptarClick() {
       let nuevoTexto = encriptar(textoNormalizado);
 
       //Ocultar el mensaje predeterminado de la transcripción
-      transcripcion.classList = 'oculto';
+      transcripcion.classList = 'ocultar';
+      textoEncriptado.classList = 'mostrar';
 
       //Crear un elemento con la respuesta
       let div = document.createElement('div');
@@ -99,12 +105,14 @@ function encriptarClick() {
 
       let botonCopiar = document.createElement('i');
       botonCopiar.classList = 'bx bx-copy';
-      botonCopiar.onclick = copiar(nuevoTexto);
+      botonCopiar.setAttribute("onclick", "copiar(this)" );
 
       div.append(parrafo);
       div.append(botonCopiar);
-      textoEncriptado.append(div);
+      textosResultantes.append(div);
    }
+
+   cajaDeTexto.value = 'Ingrese el texto aquí';
 }
 
 function desencriptarClick() {
@@ -115,7 +123,8 @@ function desencriptarClick() {
       let nuevoTexto = desencriptar(textoNormalizado);
 
       //Ocultar el mensaje predeterminado de la transcripción
-      transcripcion.classList = 'oculto';
+      transcripcion.classList = 'ocultar';
+      textoEncriptado.classList = 'mostrar';
 
       //Crear un elemento con la respuesta
       let div = document.createElement('div');
@@ -126,14 +135,39 @@ function desencriptarClick() {
 
       let botonCopiar = document.createElement('i');
       botonCopiar.classList = 'bx bx-copy';
-      botonCopiar.onclick = copiar(nuevoTexto);
+      botonCopiar.setAttribute("onclick", "copiar(this)" );
 
       div.append(parrafo);
       div.append(botonCopiar);
-      textoEncriptado.append(div);
+      textosResultantes.append(div);
    }
+
+   cajaDeTexto.value = 'Ingrese el texto aquí';
 }
 
-function copiar(texto) {
-   navigator.clipboard.writeText(texto)
+function copiar(boton) {
+   let contenedor = boton.parentNode;
+   let parrafo = contenedor.querySelector('p');
+   let texto = parrafo.innerHTML;
+
+   for (const letra in texto) {
+      if (texto[letra] == '"'){
+         texto = texto.replace('"', '');
+      }
+   }
+
+   navigator.clipboard.writeText(texto);
+}
+
+function limpiar(){
+   let divs = textosResultantes.getElementsByClassName('resultadoEncriptacion');
+   let i = divs.length - 1;
+
+   do {
+      textosResultantes.removeChild(divs[i]);
+      i--;
+   } while (i >= 0);
+
+   transcripcion.classList = 'mostrar';
+   textoEncriptado.classList = 'ocultar';
 }

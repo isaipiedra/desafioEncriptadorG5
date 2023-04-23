@@ -98,14 +98,19 @@ body{
    color: #343A40;
    text-align: center;
    overflow-y: scroll;
+   display: flex;
 }
 
-.resultado img{
+.resultado #transcripcion{
+   align-self: center;
+}
+
+#transcripcion img{
    width: 254px;
    height: auto;
 }
 
-.resultado h3{
+#transcripcion h3{
    font-size: 24px;
    margin-bottom: 16px;
    font-family: 'Inter';
@@ -127,7 +132,8 @@ body{
 #encriptado .resultadoEncriptacion{
    background: #EFF1FA;
    border-radius: 10px;
-
+   margin-bottom: 10px;
+   border: .5px solid #072B61;
 }
 
 #encriptado .resultadoEncriptacion p{
@@ -135,7 +141,7 @@ body{
    text-align: justify;
    font-size: 15px;
    display: block;
-   padding: 20px;
+   padding: 15px;
 }
 
 #encriptado .resultadoEncriptacion i{
@@ -146,14 +152,31 @@ body{
    border-end-end-radius: 10px;
    color: #FFF;
    background: #072B61;
-   border: .5px solid #072B61;
+   border-top: .5px solid #072B61;
 }
 
 #encriptado .resultadoEncriptacion i:hover{
    color: #343A40;
    background: #FFF;
-   border: .5px solid #343A40;
+   border-top: .5px solid #343A40;
    transition: .3s ease-out;
+}
+
+#encriptado .limpiar{
+   font-size: 15px;
+   padding: 15px;
+   border-radius: 10px;
+   color: #072B61;
+   background: #EFF1FA;
+   border: 1px solid #072B61;
+   width: 100%;
+}
+
+#encriptado .limpiar:hover{
+   color: #0A3871;
+   background: #FFF;
+   border: 1px solid #0A3871;
+   transition: .2s ease;
 }
 
 .footer p a{
@@ -173,6 +196,10 @@ body{
 }
 
 /* Ocultar la transcripción */
-.oculto{
+.ocultar{
    display: none;
+}
+
+.mostrar{
+   display: block;
 }

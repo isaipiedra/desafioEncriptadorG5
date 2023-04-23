@@ -23,7 +23,7 @@
    </main>
    <!-- Sección de agregar texto -->
    <section class='encriptador'>
-      <textarea name='texto' id='texto' cols='30' rows='10' placeholder='Ingrese el texto aquí'>Ingrese el texto aquí</textarea>
+      <textarea name='texto' id='texto' cols='30' rows='10' placeholder='Ingrese el texto aquí' onclick='this.select()'>Ingrese el texto aquí</textarea>
       <!-- Panel de botones -->
       <div class='panel-botones'>
          <span class='alerta'>
@@ -37,7 +37,7 @@
       </div>
       <!-- Footer -->
       <footer class='footer'>
-         <p>Creado por <a href="https://github.com/isaipiedra" target="_blank" rel="noopener noreferrer">@Isaí Piedra Torres</a> | 2023 |
+         <p>Creado por <a href="https://github.com/isaipiedra" target="_blank" rel="noopener noreferrer">@Isaí Piedra Torres</a> | &copy;2023 |
             Para: Desafío encriptador ONE G5</p>
       </footer>
    </section>
@@ -49,7 +49,11 @@
          <h3>Ningún mensaje fue encontrado</h3>
          <p>Ingresa el texto que desees encriptar o desencriptar.</p>
       </div>
-      <div id='encriptado'>
+      <div id='encriptado' class='ocultar'>
+         <div id='resultados'>
+
+         </div>
+         <button class='limpiar' onclick='limpiar()'>Limpiar el area de resultados</button>
       </div>
    </aside>
 
