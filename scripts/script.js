@@ -68,8 +68,9 @@ function desencriptar(texto) {
       nuevoTexto += texto[letra];
       for (let codigo = 0; codigo < codigos.length; codigo++){
             if(nuevoTexto.includes(codigos[codigo])){
-               nuevoTexto = nuevoTexto.replace(codigos[codigo], '');
-               nuevoTexto += vocales[codigo];
+               nuevoTexto = nuevoTexto.replace(codigos[codigo], vocales[codigo]);
+            } else if(nuevoTexto.includes('ames')){
+               nuevoTexto = nuevoTexto.replace('ames', 'ai');
             }
          }
       letra++;
@@ -134,5 +135,5 @@ function desencriptarClick() {
 }
 
 function copiar(texto) {
-   navigator.clipboard.writeText(texto);
+   navigator.clipboard.writeText(texto)
 }
