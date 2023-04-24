@@ -5,8 +5,15 @@ body{
    padding: 0;
    background: #E5E5E5;
    font-family: 'Inter', sans-serif;
+}
+
+main{
    display: flex;
    flex-wrap: wrap;
+}
+
+.encabezado{
+   position: absolute;
 }
 
 .encabezado .logo{
@@ -18,10 +25,10 @@ body{
 .encriptador{
    color: #343A40;
    margin-left: 120px;
-   margin-top: 100px;
+   margin-top: 110px;
    padding-right: 20px;
-   width: calc(100% - (300px + 120px + 80px + 60px));
-   height: calc(100vh - (40px + 100px));
+   width: 800px;
+   height: 100%;
 }
 
 .encriptador textarea{
@@ -33,7 +40,7 @@ body{
    line-height: 150%;
    color: #0A3871;
    width: 100%;
-   height: 60%;
+   height: 40%;
    overflow-y: scroll;
 }
 
@@ -53,6 +60,10 @@ body{
 .encriptador .panel-botones .botones{
    align-items: center;
    text-align: center;
+}
+
+.btn-encriptar, .btn-desencriptar{
+   cursor: pointer;
 }
 
 .encriptador .panel-botones .botones .btn-encriptar{
@@ -90,7 +101,7 @@ body{
 
 .resultado{
    background: #FFF;
-   height: calc(100vh - (40px + 64px));
+   height: calc(100vh - (80px + 64px));
    width: 300px;
    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
    padding: 32px;
@@ -129,6 +140,10 @@ body{
    text-align: center;
 }
 
+#encriptado{
+   width: 100%;
+}
+
 #encriptado .resultadoEncriptacion{
    background: #EFF1FA;
    border-radius: 10px;
@@ -141,7 +156,7 @@ body{
    text-align: justify;
    font-size: 15px;
    display: block;
-   padding: 15px;
+   padding: 10px 15px;
 }
 
 #encriptado .resultadoEncriptacion i{
@@ -153,6 +168,7 @@ body{
    color: #FFF;
    background: #072B61;
    border-top: .5px solid #072B61;
+   cursor: pointer;
 }
 
 #encriptado .resultadoEncriptacion i:hover{
@@ -170,6 +186,8 @@ body{
    background: #EFF1FA;
    border: 1px solid #072B61;
    width: 100%;
+   margin-bottom: 32px;
+   cursor: pointer;
 }
 
 #encriptado .limpiar:hover{
@@ -195,7 +213,7 @@ body{
    display: none;
 }
 
-/* Ocultar la transcripción */
+/* Ocultar o mostrar la transcripción */
 .ocultar{
    display: none;
 }
