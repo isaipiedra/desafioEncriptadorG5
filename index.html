@@ -5,7 +5,9 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Título de la página -->
    <title>Encriptador | Isaí Piedra</title>
+   <!-- Referencia a la hoja de estilo y de íconos -->
    <link rel="stylesheet" href="css/styles.css">
    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -25,22 +27,25 @@
       <!-- Sección de agregar texto -->
       <section class='encriptador'>
          <form>
-            <textarea name='texto' id='texto' rows='7' placeholder='Ingrese el texto aquí'
+            <textarea name='texto' id='texto' placeholder='Ingrese el texto aquí'
                onclick='this.select()'>Ingrese el texto aquí</textarea>
             <!-- Panel de botones -->
             <div class='panel-botones'>
+               <!-- Alerta de uso del encriptador -->
                <span class='alerta'>
                   <i class='bx bxs-error-circle'></i>
                   <p>Solo letras minúsculas y sin acentos</p>
                </span>
+               <!-- Botones de encriptar y desencriptar -->
                <span class='botones'>
                   <input type='button' value='Encriptar' class='btn-encriptar' onclick='encriptarClick()'>
                   <input type='button' value='Desencriptar' class='btn-desencriptar' onclick='desencriptarClick()'>
                </span>
             </div>
          </form>
-         <!-- Footer -->
-         <footer class='footer'>
+         <!-- Pie de página para sitio de escritorio -->
+         <footer class='copy-completo'>
+            <!-- Texto de copyright -->
             <p>Creado por <a href="https://github.com/isaipiedra" target="_blank" rel="noopener noreferrer">@Isaí Piedra
                   Torres</a> | &copy;2023 |
                Para: Desafío encriptador ONE G5</p>
@@ -48,20 +53,34 @@
       </section>
 
       <!-- Sección para visualizar el resultado -->
-      <aside class='resultado'>
+      <section class='resultado'>
+         <!-- Contenido por defecto -->
          <div id='transcripcion'>
             <img src="imgs/Muñeco.png" alt="búsqueda">
             <h3>Ningún mensaje fue encontrado</h3>
             <p>Ingresa el texto que desees encriptar o desencriptar.</p>
          </div>
+         <!-- Contenedor de las respuestas -->
          <div id='encriptado' class='ocultar'>
             <div id='resultados'>
 
             </div>
+            <!-- Botón para limpiar el área de respuestas -->
             <button class='limpiar' onclick='limpiar()'>Limpiar el area de resultados</button>
          </div>
-      </aside>
+      </section>
+
+      <!-- Pie de página para sitios en dispositivos móviles -->
+      <footer class='copy-responsive'>
+         <!-- Texto de copyright -->
+         <p>Creado por <a href="https://github.com/isaipiedra" target="_blank" rel="noopener noreferrer">@Isaí Piedra
+               Torres</a> | &copy;2023 |
+            Para: Desafío encriptador ONE G5</p>
+      </footer>
    </main>
 </body>
+
+<!-- Referencias a los archivos lógicos -->
+<script src="scripts/copiar.js"></script>
 <script src="scripts/script.js"></script>
 </html>
